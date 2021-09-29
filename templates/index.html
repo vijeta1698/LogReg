@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Woman Extra-marital Affair Possibility Predictor</title>
+	<link rel="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+	body {
+		padding: 0;
+		font-family: consolas;
+		margin: 0;
+		background-image: url("{{ url_for('static',filename='rhliitw.jpg') }}");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: inherit;
+	}
+	.mainHeader {
+		background-color: rgba(0, 0, 0, 0.76);
+		padding: 20px;
+		font-size: 25px;
+		color: white;
+		text-align: center;
+        border-bottom: 5px solid;
+        animation: blinker 5s infinite;
+	}
+
+
+
+    @keyframes blinker{
+        0%{border-color: white;}
+        50%{border-color: black;}
+        100%{border-color: white;}
+    }
+
+	.mainCont {
+		background-color: rgba(255, 255, 255, 0.562);
+		width: 95%;
+		margin: 10px auto;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.txtBox {
+		padding: 5px 15px;
+		border: 0;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+		border-bottom: 3px solid rgb(68, 68, 68);
+		color: rgb(56, 56, 56);
+		padding-left: 5px;
+		font-size: 15px;
+		width:60%;
+	}
+
+	.btnAction {
+		padding: 5px 15px;
+		text-decoration: none;
+		background-color: rgb(20, 20, 20);
+		color: white;
+		cursor: pointer;
+		border-radius: 5px;
+		font-size: 18px;
+	}
+
+	.btnAction:hover {
+		background-color: rgb(39, 39, 39);
+	}
+
+	.myTable {
+		border: 0;
+		border-collapse: collapse;
+		width: 100%;
+		margin: auto;
+		text-align: left;
+	}
+
+	.subCont {
+		width: 50%;
+		margin: auto;
+	}
+	.cred{background:red !important }
+	</style>
+</head>
+
+<body>
+	<div class="header mainHeader jumbotron">
+		<h1>Woman Extra-marital Affair Possibility Predictor(based on a survey of women in 1974 by Redbook magazine)</h1> </div>
+	<div class="mainCont">
+		<div class="subCont">
+			<form action="{{ url_for('predict') }}" id="mainForm" method="post">
+				<table class="myTable">
+					<tbody>
+						<tr>
+							<td>
+								<input name="txtRm"  type="text" required placeholder="Rate Marriage(1-5)" class="txtBox"> </td>
+							<td> <button type="submit"  class="btnAction cred" name="btnAirTemp"> PREDICT</button> </td>
+						</tr>
+						<tr>
+							<td><input name="txtAge" type="text" required placeholder = "Age" class="txtBox"> </td>
+
+						</tr>
+						<tr>
+							<td>
+								<input name="txtYrs_married" type="text" required placeholder="Years Married" class="txtBox"> </td>
+
+						</tr>
+						<tr>
+							<td>
+								<input name="txtChildren" type="text" required placeholder="Children" class="txtBox"> </td>
+						</tr>
+						<tr>
+							<td>
+								<input name="txtReligious" type="text" required placeholder="Religious(1-4)" class="txtBox"> </td>
+
+						</tr>
+						<tr>
+							<td>
+								<input name="txtEduc" type="text" required placeholder="Education(fill as instructed in description)" class="txtBox"> </td>
+
+						</tr>
+						<tr>
+							<td><input name="Occupation1.0" type="text" required placeholder="Occupation_1.0(see description)" class="txtBox"> </td>
+
+						<tr>
+							<td>
+								<input name="Occupation2.0" type="text" required placeholder="Occupation2.0((see description)" class="txtBox"> </td>
+						</tr>
+						<tr>
+							<td>
+								<input name="Occupation3.0" type="text" required placeholder="Occupation3.0((see description)" class="txtBox"> </td>
+						<tr>
+							<td>
+								<input name="Occupation4.0" type="text" required placeholder="Occupation4.0((see description)" class="txtBox"> </td>
+
+						</tr>
+                        <tr>
+							 <td><input name="Occupation5.0" type="text" required placeholder = "Occupation5.0(see description)" class="txtBox"> </td>
+
+						</tr>
+                        <tr>
+							<td><input name="Occupation6.0" type="text" required placeholder = "Occupation6.0(see description)" class="txtBox"> </td>
+
+						</tr>
+                        <tr>
+							<td><input name="OccupationHub1.0" type="text" required placeholder = "OccupationHub1.0(see description)" class="txtBox"> </td>
+
+						</tr>
+                       <tr>
+							<td><input name="OccupationHub2.0" type="text" required placeholder = "OccupationHub2.0(see description)" class="txtBox"> </td>
+
+						</tr>
+                        <tr>
+							<td><input name="OccupationHub3.0" type="text" required placeholder = "OccupationHub3.0(see description)" class="txtBox"> </td>
+
+						</tr>
+                       <tr>
+							<td><input name="OccupationHub4.0" type="text" required placeholder = "OccupationHub4.0(see description)" class="txtBox"> </td>
+
+						</tr>
+
+                       <tr>
+							<td><input name="OccupationHub5.0" type="text" required placeholder = "OccupationHub5.0(see description)" class="txtBox"> </td>
+
+						</tr>
+
+                       <tr>
+							<td><input name="OccupationHub6.0" type="text" required placeholder = "OccupationHub6.0(see description)" class="txtBox"> </td>
+
+						</tr>
+
+					</tbody>
+				</table>
+			</form>
+		</div>
+
+		<div class="container" style="text-align:justify;width: 60%;margin: 1rem auto;font-family: arial;color: black;text-shadow: 0px 1px 1px black;">
+			<h3>{{ prediction_text }}</h3>
+			<p>Description of Variables </p>
+			<p>Rate marriage: woman's rating of her marriage (1 = very poor, 5 = very good)</p>
+			<p>Age: woman's age</p>
+			<p>Years of marriage: number of years married</p>
+			<p>Children: number of children</p>
+			<p>Religious: woman's rating of how religious she is (1 = not religious, 4 =strongly religious)</p>
+			<p>Education: level of education (9 = grade school, 12 = high school, 14 = some college, 16 = college graduate, 17 = some graduate school, 20 = advanced degree)</p>
+			<p>Occupation: woman's occupation (1 = student, 2 = farming/semi- skilled/unskilled, 3 = "white collar", 4 = teacher/nurse/writer/technician/skilled, 5 = managerial/business, 6 = professional with advanced degree)</p>
+			<p>Husband occupation: husband's occupation (same coding as above)</p>
+			<p>Affairs: time spent in extra-marital affairs (Here the model gives 1 or 0 as outcome which indicates having extra-marital affair or not respectively)</p>
+		</div>
+
+	</div>
+</body>
+
+</html>
